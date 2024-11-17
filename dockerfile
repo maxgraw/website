@@ -1,5 +1,3 @@
-FROM nginx:alpine
-
-WORKDIR /app
-
-COPY . /usr/share/nginx/html
+FROM ghcr.io/static-web-server/static-web-server:2
+COPY ./index.html ./dist/index.html
+ENV SERVER_ROOT="./dist"
